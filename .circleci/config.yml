@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout
+
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          key: yarn-cache-v1-{{ checksum "yarn.lock" }}
+
+      - run:
+          name: Install Dependencies
+          command: yarn
+
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-cache-v1-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+
+      - run:
+          name: Ensure build runs successfully
+          command: npm run build
+
+      - run:
+          name: Run Tests
+          command: npm test

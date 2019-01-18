@@ -2,6 +2,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 [![Build Status](https://travis-ci.org/kevgathuku/services-test.svg?branch=master)](https://travis-ci.org/kevgathuku/services-test)
 
+[![CircleCI](https://circleci.com/gh/kevgathuku/services-test/tree/master.svg?style=svg)](https://circleci.com/gh/kevgathuku/services-test/tree/master)
+
 ## Available Scripts
 
 In the project directory, you can run:
